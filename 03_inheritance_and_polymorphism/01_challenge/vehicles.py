@@ -37,7 +37,6 @@ def display_vehicle_details(vehicle):
 
 if __name__ == "__main__":
     car = Car(make="Toyota", model="Corolla", year=2021)
-    car = Car(make="", model="", year=0)
     truck = Truck(make="Ford", model="F-150", year=2020, towing_capacity=5000)
 
     print(car.get_details())  # Car: 2021 Toyota Corolla
