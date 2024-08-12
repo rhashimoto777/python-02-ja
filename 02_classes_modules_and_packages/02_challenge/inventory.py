@@ -18,5 +18,12 @@ class Inventory:
         Vehicle.overwrite_discount_rule(rule_lambda, discount)
         for v_elem in self.vehicles:
             v_elem.apply_discount()
+            print(v_elem.apply_discount_2(rule_lambda, discount))
 
-    # def search_vehicles(self, model):
+    def search_vehicles(self, model_input):
+        ret = []
+        for vehicle in self.vehicles:
+            found = re.findall(model_input, vehicle.get_model())
+            if len(found) >= 1:
+                ret.append(vehicle)
+        return ret

@@ -42,6 +42,13 @@ class Vehicle:
         return
     
     def apply_discount(self):
+        aaa = self.discount_rule_lambda(self)
         if self.discount_rule_lambda(self):
             self._discount = self.discount_rule_value
         return
+    
+    
+    def apply_discount_2(self, rule_lambda, discount):
+        aaa = rule_lambda(self)
+        if aaa:
+            return discount
